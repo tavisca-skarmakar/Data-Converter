@@ -24,7 +24,7 @@ public class XMLConverter {
 			JAXBContext context = JAXBContext.newInstance(PersonList.class);
 			Marshaller marshaller = context.createMarshaller();
 			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-			marshaller.marshal(personList, new File("person1.xml"));
+			marshaller.marshal(personList, new File("person.xml"));
 			marshaller.marshal(personList, System.out);
 		} catch (JAXBException e) {
 			e.printStackTrace();
