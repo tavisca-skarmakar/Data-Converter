@@ -1,7 +1,6 @@
 package com.tavisca.gce;
 
 import java.io.File;
-import java.util.ArrayList;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -19,12 +18,7 @@ public class XMLConverter {
 		 * 
 		 * }catch (IOException ioException) { ioException.printStackTrace(); }
 		 */
-		PersonList personList = new PersonList();
-		Person person1 = new Person(1, "Sayan", "Karmakar", 16);
-		Person person2 = new Person(2, "Sushovan", "Karmakar", 22);
-		personList.setPersonList(new ArrayList<Person>());
-		personList.getPersonList().add(person1);
-		personList.getPersonList().add(person2);
+		PersonList personList = new PersonListCreator().createPersonList();
 		
 		try {
 			JAXBContext context = JAXBContext.newInstance(PersonList.class);
